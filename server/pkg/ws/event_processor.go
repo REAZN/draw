@@ -15,6 +15,8 @@ func (r *Room) ProcessWSEvent(c *websocket.Conn, payload Payload) {
 		r.HandleJoinRoom(c, payload.Content)
 	case LeaveRoom:
 		r.HandleLeaveRoom(c, payload.Content)
+	case ListMembers:
+		r.HandleListMembers(c, payload.Content)
 	case Message:
 		r.HandleMessage(c, payload.Content)
 	default:

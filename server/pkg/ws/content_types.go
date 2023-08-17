@@ -3,16 +3,17 @@ package ws
 type Event string
 
 const (
-	Ping       Event = "ping"
-	CreateRoom Event = "create"
-	JoinRoom   Event = "join"
-	LeaveRoom  Event = "leave"
-	Message    Event = "message"
+	Ping        Event = "ping"
+	CreateRoom  Event = "create"
+	JoinRoom    Event = "join"
+	LeaveRoom   Event = "leave"
+	ListMembers Event = "members"
+	Message     Event = "message"
 )
 
 type Payload struct {
 	Event   Event                  `json:"event"`
-	Content map[string]interface{} `json:"content"`
+	Content map[string]interface{} `json:"data"`
 }
 
 type CreateRoomContent struct {
